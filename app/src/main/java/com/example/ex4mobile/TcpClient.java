@@ -64,6 +64,7 @@ public class TcpClient {
             System.out.println(command);
             Runnable runnable = new Runnable() {
                 PrintWriter printWriter = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
+
                 @Override
                 public void run() {
                     if (printWriter != null) {
@@ -95,10 +96,6 @@ public class TcpClient {
         }
     }
 
-    public void initializeCommands() {
-        this.commands[0] = "set /controls/flight/aileron ";
-        this.commands[1] = "set /controls/flight/elevator ";
-    }
 }
 
 

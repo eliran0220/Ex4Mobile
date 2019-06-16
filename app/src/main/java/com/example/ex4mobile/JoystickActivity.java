@@ -1,8 +1,8 @@
 package com.example.ex4mobile;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
-import android.util.Log;
 
 public class JoystickActivity extends AppCompatActivity implements JoystickView.JoystickListener {
     @Override
@@ -14,13 +14,16 @@ public class JoystickActivity extends AppCompatActivity implements JoystickView.
 
     public void onJoystickMoved(float xPercent, float yPercent, int id) {
         TcpClient tcpClient = TcpClient.getInstance();
-        String[] commands = new String[2];
-        commands[0] = "set /controls/flight/aileron ";
-        commands[1] = "set /controls/flight/elevator ";
-        commands[0] += String.valueOf(xPercent) + " \r\n";
-        commands[1] += String.valueOf(yPercent) + " \r\n";
+        String[] commands = initializeCommands(xPercent, yPercent);
         tcpClient.sendValues(commands[0]);
         tcpClient.sendValues(commands[1]);
+    }
+
+    public String[] initializeCommands(float xPercent, float yPercent) {
+        String[] commands = new String[2];
+        commands[0] = "set /controls/flight/aileron " + String.valueOf(xPercent + " \r\n");
+        commands[1] = "set /controls/flight/elevator " + String.valueOf(yPercent) + " \r\n";
+        return commands;
     }
 
 }
