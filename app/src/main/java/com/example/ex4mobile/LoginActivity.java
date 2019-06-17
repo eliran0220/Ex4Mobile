@@ -33,7 +33,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         int connectPort = Integer.parseInt(tempPort);
         TcpClient tcpClient = TcpClient.getInstance();
         tcpClient.connect(connectIP,connectPort);
-        boolean state = tcpClient.sock();
         Intent intent = new Intent(this, JoystickActivity.class);
         startActivity(intent);
     }
