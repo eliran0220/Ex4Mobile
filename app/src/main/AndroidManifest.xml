@@ -12,14 +12,14 @@
         android:theme="@style/AppTheme"
         android:configChanges="orientation|screenSize">
         <activity android:name=".LoginActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden">>
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".JoystickActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden">>
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.support.PARENT_ACTIVITY" />
             </intent-filter>

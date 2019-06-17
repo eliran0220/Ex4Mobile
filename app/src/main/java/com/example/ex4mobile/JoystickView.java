@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -22,7 +21,7 @@ public class JoystickView extends SurfaceView implements SurfaceHolder.Callback,
         centerX = getWidth() / 2;
         centerY = getHeight() / 2;
         baseRadius = Math.min(getWidth(), getHeight()) / 2;
-        joystickRadius = Math.min(getWidth(), getHeight()) / 6;
+        joystickRadius = Math.min(getWidth(), getHeight()) / 5;
     }
 
     public JoystickView(Context context) {
@@ -56,8 +55,9 @@ public class JoystickView extends SurfaceView implements SurfaceHolder.Callback,
             myCanvas.drawColor(Color.argb(255, 2, 136, 209)); // BG color
             //Draw the ellipse base
             colors.setColor(Color.argb(255, 211, 211, 211));
-            RectF r = new RectF(100, 120, getWidth() - 100, getHeight() - 120);
-            myCanvas.drawOval(r, colors);
+            //RectF r = new RectF(100, 120, getWidth() - 100, getHeight() - 120);
+            //myCanvas.drawOval(r, colors);
+            myCanvas.drawCircle(centerX, centerY, baseRadius, colors);
             colors.setARGB(255, 36, 190, 1);
             myCanvas.drawCircle(newX, newY, joystickRadius, colors);
             getHolder().unlockCanvasAndPost(myCanvas); //Write the new drawing to the SurfaceView
