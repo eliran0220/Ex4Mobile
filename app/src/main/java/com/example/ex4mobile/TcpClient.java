@@ -16,13 +16,11 @@ public class TcpClient {
     private int port;
     private boolean isRunning;
     private Socket socket;
-    private String[] commands;
 
     private TcpClient() {
         this.ip = "";
         this.socket = null;
         isRunning = false;
-        commands = new String[2];
     }
 
     public static TcpClient getInstance() {
@@ -50,6 +48,12 @@ public class TcpClient {
         };
         Thread thread = new Thread(runnable);
         thread.start();
+    }
+
+    public boolean sock() {
+        if (this.socket == null)
+            return false;
+        return true;
     }
 
 
