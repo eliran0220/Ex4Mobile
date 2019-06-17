@@ -50,13 +50,6 @@ public class TcpClient {
         thread.start();
     }
 
-    public boolean sock() {
-        if (this.socket == null)
-            return false;
-        return true;
-    }
-
-
     public void sendValues(final String command) {
         try {
             System.out.println(command);
