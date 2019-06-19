@@ -25,14 +25,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
 
-
     @Override
     public void onClick(View view) {
         String connectIP = ip.getText().toString();
         String tempPort = port.getText().toString();
         int connectPort = Integer.parseInt(tempPort);
         TcpClient tcpClient = TcpClient.getInstance();
-        tcpClient.connect(connectIP,connectPort);
+        tcpClient.connect(connectIP, connectPort);
         Intent intent = new Intent(this, JoystickActivity.class);
         startActivity(intent);
     }

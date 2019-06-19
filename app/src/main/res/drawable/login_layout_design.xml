@@ -3,12 +3,12 @@
     android:shape="rectangle">
 
     <!-- View background color -->
-    <solid android:color="#0288d1"></solid>
+    <solid android:color="@color/LoginBackground"></solid>
 
     <!-- View border color and width -->
     <stroke
         android:width="3dp"
-        android:color="#0069c0"></stroke>
+        android:color="@color/LoginStroke"></stroke>
 
     <!-- The radius makes the corners rounded -->
     <corners android:radius="2dp"></corners>

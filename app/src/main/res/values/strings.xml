@@ -2,4 +2,7 @@
     <string name="app_name">Ex4 Mobile</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
+    <string name ="connect">Connect</string>
+    <string name="port">PORT:</string>
+    <string name="ip">IP:</string>
 </resources>

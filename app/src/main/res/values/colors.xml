@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="JoystickBackground">#0288D1</color>
+    <color name= "LoginBackground">#0288d1</color>
+    <color name ="LoginStroke">#0069c0</color>
+    <color name = "ConnectButtonBackground">@android:color/holo_green_light</color>
+    <color name ="IpAndPortColor">#ffffff</color>
 </resources>

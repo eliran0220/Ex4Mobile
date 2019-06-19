@@ -30,8 +30,8 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="2dp"
 
-                    android:text="IP:"
-                    android:textSize="20dp"
+                    android:text="@string/ip"
+                    android:textSize="20sp"
                     app:layout_constraintEnd_toStartOf="@+id/editIp"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -53,16 +53,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.1"
+                android:layout_weight="0.2"
                 android:gravity="center">
 
                 <TextView
                     android:id="@+id/portView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:text="PORT:"
-                    android:textSize="20dp"
+                    android:text="@string/port"
+                    android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ipView" />
 
@@ -74,7 +73,7 @@
                     android:padding="10dp"
                     android:background="@drawable/ip_port_design"
                     android:ems="10"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.319"
                     app:layout_constraintStart_toEndOf="@+id/portView"
@@ -90,11 +89,11 @@
             <Button
                 android:id="@+id/connectButton"
                 android:layout_width="150dp"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/loggin_button_design"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:textAllCaps="false"
-                android:text="Connect"/>
+                android:text="@string/connect"/>
         </LinearLayout>
     </LinearLayout>
 

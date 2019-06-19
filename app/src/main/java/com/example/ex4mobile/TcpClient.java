@@ -10,6 +10,10 @@ import java.net.Socket;
 
 import static android.content.ContentValues.TAG;
 
+/*
+The TcpClient class.
+Configured to be singelton.
+ */
 public class TcpClient {
     public static TcpClient tcpClient = null;
     private String ip;
@@ -17,12 +21,19 @@ public class TcpClient {
     private boolean isRunning;
     private Socket socket;
 
+    /*
+    Constructor for TcpClient.
+     */
     private TcpClient() {
         this.ip = "";
         this.socket = null;
         isRunning = false;
     }
 
+    /*
+    The getInstance returns an instance of the tcp client, if already
+    constructed returns it, if not constructs a new one.
+     */
     public static TcpClient getInstance() {
         if (tcpClient == null)
             tcpClient = new TcpClient();
@@ -30,6 +41,10 @@ public class TcpClient {
         return tcpClient;
     }
 
+    /*
+    The connect function creates a new thread in which it's going to connect
+    to the given ip and port.
+     */
     public void connect(String givenIp, int givenPort) {
         this.isRunning = true;
         this.ip = givenIp;
@@ -50,6 +65,10 @@ public class TcpClient {
         thread.start();
     }
 
+    /*
+    The sendValues function creates a new PrintWriter and sends the
+    values from the joystick to the server / simulator.
+     */
     public void sendValues(final String command) {
         try {
             System.out.println(command);
@@ -74,11 +93,16 @@ public class TcpClient {
 
     }
 
-
+    /*
+    The isConnected function returns the status of the client.
+     */
     public boolean isConnected() {
         return this.isRunning;
     }
 
+    /*
+    Closes the client and releases the socked.
+     */
     public void closeClient() {
         try {
             this.socket.close();
